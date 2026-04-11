@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/live2d/rem/remu.physics.json</loc>
+    <loc>http://example.com/live2d/rem/rem.json</loc>
     
     <lastmod>2018-03-26</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/live2d/rem/rem.json</loc>
+    <loc>http://example.com/live2d/rem/remu.physics.json</loc>
     
     <lastmod>2018-03-26</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/live2d/jiatenghui/model/katou_01/katou_01.physics.json</loc>
+    <loc>http://example.com/live2d/jiatenghui/model/katou_01/katou_01.pose.json</loc>
     
     <lastmod>2016-11-20</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/live2d/jiatenghui/model/katou_01/katou_01.pose.json</loc>
+    <loc>http://example.com/live2d/jiatenghui/model/katou_01/katou_01.physics.json</loc>
     
     <lastmod>2016-11-20</lastmod>
     
@@ -110,24 +110,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/live2d/jiatenghui/model/katou_01/exp/F_FUN.exp.json</loc>
-    
-    <lastmod>2016-11-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/live2d/jiatenghui/model/katou_01/exp/F_SURPRISE.exp.json</loc>
-    
-    <lastmod>2016-11-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/live2d/jiatenghui/model/katou_01/exp/F_NOMAL.exp.json</loc>
     
     <lastmod>2016-11-20</lastmod>
@@ -137,7 +119,25 @@
   </url>
   
   <url>
+    <loc>http://example.com/live2d/jiatenghui/model/katou_01/exp/F_FUN.exp.json</loc>
+    
+    <lastmod>2016-11-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/live2d/jiatenghui/model/katou_01/exp/F_SAD.exp.json</loc>
+    
+    <lastmod>2016-11-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/live2d/jiatenghui/model/katou_01/exp/F_SURPRISE.exp.json</loc>
     
     <lastmod>2016-11-20</lastmod>
     
