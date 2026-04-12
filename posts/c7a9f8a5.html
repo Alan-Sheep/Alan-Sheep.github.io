@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>live2d看板娘 | Alan-Sheep的神秘小仓</title><meta name="author" content="Alan-Sheep"><meta name="copyright" content="Alan-Sheep"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言*如果你的hexo博客网页上想要一个精美的live2d看板娘，可以看我接下来的教程了（没有难度，可能需要你有魔法，当然你前置需要有hexo才行） 我使用的是hexo-oh-my-live2d，之所以选用这个的原因是该项目目前正在被积极维护，可支持 所有版本 的live2d模型，之前流行的hexo-helper-live2d由于不在维护了，所以支持的模型较少,这里就不 hexo-oh-my-li">
+<meta property="og:type" content="article">
+<meta property="og:title" content="live2d看板娘">
+<meta property="og:url" content="http://example.com/posts/c7a9f8a5.html">
+<meta property="og:site_name" content="Alan-Sheep的神秘小仓">
+<meta property="og:description" content="前言*如果你的hexo博客网页上想要一个精美的live2d看板娘，可以看我接下来的教程了（没有难度，可能需要你有魔法，当然你前置需要有hexo才行） 我使用的是hexo-oh-my-live2d，之所以选用这个的原因是该项目目前正在被积极维护，可支持 所有版本 的live2d模型，之前流行的hexo-helper-live2d由于不在维护了，所以支持的模型较少,这里就不 hexo-oh-my-li">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-04-11T13:26:09.000Z">
+<meta property="article:modified_time" content="2026-04-11T13:29:43.265Z">
+<meta property="article:author" content="Alan-Sheep">
+<meta property="article:tag" content="生活不易，弟弟卖艺">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "live2d看板娘",
+  "url": "http://example.com/posts/c7a9f8a5.html",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2026-04-11T13:26:09.000Z",
+  "dateModified": "2026-04-11T13:29:43.265Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Alan-Sheep",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/c7a9f8a5.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'live2d看板娘',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.1"><link rel="alternate" href="/atom.xml" title="Alan-Sheep的神秘小仓" type="application/atom+xml">
+</head><body><div class="bg-animation" id="web_bg" style="background-image: url(/img/preview1.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/index.html"><i class="fa-fw fas fa-home"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/preview1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Alan-Sheep的神秘小仓</span></a><a class="nav-page-title" href="/"><span class="site-name">live2d看板娘</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/index.html"><i class="fa-fw fas fa-home"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">live2d看板娘</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-11T13:26:09.000Z" title="发表于 2026-04-11 21:26:09">2026-04-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-04-11T13:29:43.265Z" title="更新于 2026-04-11 21:29:43">2026-04-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>前言<br>*如果你的hexo博客网页上想要一个精美的live2d看板娘，可以看我接下来的教程了（没有难度，可能需要你有魔法，当然你前置需要有hexo才行）</p>
+<p>我使用的是hexo-oh-my-live2d，之所以选用这个的原因是该项目目前正在被积极维护，可支持 所有版本 的live2d模型，之前流行的hexo-helper-live2d由于不在维护了，所以支持的模型较少,这里就不</p>
+<p>hexo-oh-my-live2d<br>仓库地址:hexo-oh-my-live2d 一个用于 hexo 的 live2d 看板娘插件，支持所有版本的模型。)<br>————————————————<br>版权声明：本文为CSDN博主「零度冰l」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zjqlwc/article/details/145442191">https://blog.csdn.net/zjqlwc/article/details/145442191</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p><strong>1.在hexo根目录下执行下面的操作</strong></p>
+<p>yarn add hexo-oh-my-live2d —save</p>
+<p><strong>2.在hexo的config.yml文件下添加下面的内容，我这里使用的是cdn，如果你想要像我一样使用自己的模型，你需要在github上建一个仓库，然后使用cdn代理一下，下面会写到如何cdn代理，先看一下我的配置文件</strong></p>
+<h1 id="live2d看板娘"><a href="#live2d看板娘" class="headerlink" title="live2d看板娘"></a>live2d看板娘</h1><p>OhMyLive2d:<br>  enable: true<br>  CDN: <a target="_blank" rel="noopener" href="https://registry.npmmirror.com/oh-my-live2d/latest/files">https://registry.npmmirror.com/oh-my-live2d/latest/files</a></p>
+<h1 id="CDN-https-registry-npmmirror-com-oh-my-live2d-0-13-files-dist-index-min-js"><a href="#CDN-https-registry-npmmirror-com-oh-my-live2d-0-13-files-dist-index-min-js" class="headerlink" title="CDN: https://registry.npmmirror.com/oh-my-live2d/0.13/files/dist/index.min.js"></a>CDN: <a target="_blank" rel="noopener" href="https://registry.npmmirror.com/oh-my-live2d/0.13/files/dist/index.min.js">https://registry.npmmirror.com/oh-my-live2d/0.13/files/dist/index.min.js</a></h1><p>  option:</p>
+<pre><code># importType: &#39;cubism2&#39; #  导入类型, 默认使用全量导入: complete , 可选值: complete, cubism2, cubism5
+libraryUrls: # 自定义 Cubism SDK 外部资源地址
+  complete: https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/complete.js
+  cubism2: https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/cubism2.js
+  cubism5: https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/cubism5.js
+# menus:
+# items: |
+#   (defaultItems)=&gt;{
+#    return [
+#      ...defaultItems,
+#      {
+#        id: &#39;github&#39;,
+#        icon: &#39;github-fill&#39;,
+#        title: &#39;我的github&#39;,
+#        onClick: ()=&gt;window.open(&#39;https://github.com/hacxy&#39;)
+#      }
+#    ]
+#   }
+
+# items:
+#   - id: &#39;github&#39;
+#     icon: &#39;github-fill&#39;
+#     title: &#39;我的github&#39;
+#     onClick: ()=&gt;window.open(&#39;https://github.com/hacxy&#39;)
+
+mobileDisplay: false # 是否在移动端显示
+models:
+  - path: &quot;https://cdn.statically.io/gh/lingdubing-xo/lingdubing-xo-pic/main/%E5%8A%A0%E8%97%A4%E6%83%A0live2d/model/katou_01/katou_01.model.json&quot;
+    mobilePosition: [-10, 23] # 移动端时模型在舞台中的位置。 默认值: [0,0] [横坐标, 纵坐标]
+    mobileScale: 0.1 # 移动端时模型的缩放比例 默认值: 0.1
+    mobileStageStyle: # 移动端时舞台的样式
+      width: 180
+      height: 166
+    motionPreloadStrategy: IDLE # 动作预加载策略 默认值: IDLE 可选值: ALL | IDLE | NONE
+    position: [20, -150] # 模型在舞台中的位置。 默认值: [0,0] [横坐标, 纵坐标]
+    scale: 0.15 # 模型的缩放比例 默认值: 0.1
+    # showHitAreaFrames: true # 是否显示点击区域 默认值: false
+    stageStyle:
+      width: 250
+      height: 250
+  - path: &quot;https://cdn.statically.io/gh/lingdubing-xo/lingdubing-xo-pic/main/%E7%BA%B1%E9%9B%BElive2d/model/sagiri/sagiri.model.json&quot;
+    scale: 0.12
+    position: [30, 0]
+    stageStyle:
+      width: 250
+    mobileScale: 0.08
+    mobilePosition: [0, 0]
+    mobileStageStyle: # 移动端时舞台的样式
+      width: 180
+parentElement: document.body #为组件提供一个父元素，如果未指定则默认挂载到 body 中
+primaryColor: &quot;var(--btn-bg)&quot; # 主题色 支持变量
+sayHello: false # 是否在初始化阶段打印项目信息
+tips:
+  style:
+    width: 230
+    height: 120
+    left: calc(50% - 20px)
+    top: -100px
+  mobileStyle:
+    width: 180
+    height: 80
+    left: calc(50% - 30px)
+    top: -100px
+  idleTips:
+    interval: 15000
+    # message:
+    #   - 你好呀~
+    #   - 欢迎来到我的小站~
+    # 自定义提示语 需要 引入 axios 库 ,也可以使用其他方法
+    message: |
+      function(){
+        return axios.get(&#39;https://v1.hitokoto.cn?c=i&#39;)
+          .then(function (response) {
+            return response.data.hitokoto ;
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+      }
+    # wordTheDay: true
+    # 自定义  https://v1.hitokoto.cn  数据
+    # wordTheDay: |
+    #   function(wordTheDayData){
+    #     return `${wordTheDayData.hitokoto}    by.${wordTheDayData.from}`;
+    #   }
+</code></pre><h1 id="then"><a href="#then" class="headerlink" title="then: |"></a>then: |</h1><h1 id="oml2d-gt"><a href="#oml2d-gt" class="headerlink" title="(oml2d)=&gt;{"></a>(oml2d)=&gt;{</h1><h1 id="setTimeout-gt"><a href="#setTimeout-gt" class="headerlink" title="setTimeout(() =&gt; {"></a>setTimeout(() =&gt; {</h1><h1 id="oml2d-tipsMessage-‘hello-world’-3000-10"><a href="#oml2d-tipsMessage-‘hello-world’-3000-10" class="headerlink" title="oml2d.tipsMessage(‘hello world’, 3000, 10);"></a>oml2d.tipsMessage(‘hello world’, 3000, 10);</h1><h1 id="8000"><a href="#8000" class="headerlink" title="}, 8000);"></a>}, 8000);</h1><h1 id=""><a href="#" class="headerlink" title="}"></a>}</h1><p>其中想要换模型的话需要更换models里path路径</p>
+<p><strong>3.使用github配合statically创建图床</strong><br>1.创建一个github仓库(注意这个仓库要是公开的)</p>
+<p>2.将仓库克隆到本地</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> 仓库地址</span><br></pre></td></tr></table></figure>
+<p>下载你想要的模型<br><strong><a target="_blank" rel="noopener" href="https://github.com/Eikanya/Live2d-model/tree/master">live2d模型下载地址</a></strong><br>解压包的话直接解压到本地的仓库里，如果是文件夹的话，到<a target="_blank" rel="noopener" href="https://minhaskamal.github.io/DownGit/#/home">downgit</a>复制github上文件夹的url路径然后下载就好<br>4.然后就是</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;live2d模型&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>复制这个json文件的url链接<br>例如上图是<a target="_blank" rel="noopener" href="https://github.com/lingdubing-xo/lingdubing-xo-pic/blob/main/%E7%BA%B1%E9%9B%BElive2d/model/sagiri/sagiri.model.json">https://github.com/lingdubing-xo/lingdubing-xo-pic/blob/main/%E7%BA%B1%E9%9B%BElive2d/model/sagiri/sagiri.model.json</a><br>然后在statically粘贴上面的链接，复制下面的链接到path路径下<br>————————————————<br>版权声明：本文为CSDN博主「零度冰l」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/zjqlwc/article/details/145442191">https://blog.csdn.net/zjqlwc/article/details/145442191</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Alan-Sheep</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/c7a9f8a5.html">http://example.com/posts/c7a9f8a5.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Alan-Sheep的神秘小仓</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/posts/4a17b156.html" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hello World</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Alan-Sheep</div><div class="author-info-description">Love life, love art</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#live2d%E7%9C%8B%E6%9D%BF%E5%A8%98"><span class="toc-number">2.</span> <span class="toc-text">live2d看板娘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CDN-https-registry-npmmirror-com-oh-my-live2d-0-13-files-dist-index-min-js"><span class="toc-number">3.</span> <span class="toc-text">CDN: https:&#x2F;&#x2F;registry.npmmirror.com&#x2F;oh-my-live2d&#x2F;0.13&#x2F;files&#x2F;dist&#x2F;index.min.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#then"><span class="toc-number">4.</span> <span class="toc-text">then: |</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#oml2d-gt"><span class="toc-number">5.</span> <span class="toc-text">(oml2d)&#x3D;&gt;{</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#setTimeout-gt"><span class="toc-number">6.</span> <span class="toc-text">setTimeout(() &#x3D;&gt; {</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#oml2d-tipsMessage-%E2%80%98hello-world%E2%80%99-3000-10"><span class="toc-number">7.</span> <span class="toc-text">oml2d.tipsMessage(‘hello world’, 3000, 10);</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8000"><span class="toc-number">8.</span> <span class="toc-text">}, 8000);</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">}</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/c7a9f8a5.html" title="live2d看板娘">live2d看板娘</a><time datetime="2026-04-11T13:26:09.000Z" title="发表于 2026-04-11 21:26:09">2026-04-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/4a17b156.html" title="Hello World">Hello World</a><time datetime="2026-04-10T12:29:08.647Z" title="发表于 2026-04-10 20:29:08">2026-04-10</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Alan-Sheep</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.4"></script></div></div><!-- hexo injector body_end start --><script async src="/js/ali_font.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax src="https://registry.npmmirror.com/oh-my-live2d/latest/files"></script><script>const oml2d = OML2D.loadOml2d({libraryUrls:{"complete":"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/complete.js","cubism2":"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/cubism2.js","cubism5":"https://registry.npmmirror.com/oh-my-live2d/latest/files/lib/cubism5.js"},mobileDisplay:false,models:[{"path":"/live2d/model/tia/model.json","mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE","position":[50,0],"scale":0.3,"stageStyle":{"width":350,"height":250}},{"path":"/live2d/model/tia/model.json","scale":0.08,"position":[30,0],"stageStyle":{"width":250},"mobileScale":0.08,"mobilePosition":[0,0],"mobileStageStyle":{"width":180}}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,statuBar:{"restMessage":"欢迎来到我的小站~"},tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:15000,message:function(){
+  return axios.get('https://v1.hitokoto.cn?c=i')
+    .then(function (response) {
+      return response.data.hitokoto ;
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+}
+}}});</script><!-- hexo injector body_end end --></body></html>
