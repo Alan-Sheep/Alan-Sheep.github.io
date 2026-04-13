@@ -384,3 +384,12 @@ div#category {
 #footer:before {
   display: none !important;
 }
+
+/* 随便逛逛区域 - 背景图片 */
+#random-banner {
+  background: url('/img/1.jpg') no-repeat center !important;
+  background-size: cover !important;
+  border-radius: 12px !important;
+  opacity: 0.6 !important;  /* 未选中时半透明 */
+  transition: opacity 0.3s ease !important;  /* 平滑过渡 */
+}
