@@ -393,3 +393,74 @@ div#category {
   opacity: 0.6 !important;  /* 未选中时半透明 */
   transition: opacity 0.3s ease !important;  /* 平滑过渡 */
 }
+
+/* 让副标题字体与主标题一致 */
+span#subtitle {
+  font-family: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* 友链卡片样式 - 完美模仿文章列表 */
+.flink-list-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  margin-bottom: 18px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.flink-list-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* 让链接本身变成弹性容器，实现图片左、文字右的布局 */
+.flink-list-card a {
+  display: flex !important;
+  align-items: center !important;  /* 垂直居中 */
+  text-decoration: none !important;
+  padding: 15px !important;
+}
+
+/* 头像容器：固定在左边，不缩小 */
+.flink-list-card .flink-item-icon {
+  flex-shrink: 0 !important;  /* 防止被压缩 */
+  width: 60px !important;
+  height: 60px !important;
+  margin-right: 18px !important;
+}
+
+/* 头像图片：填满容器，变为圆形 */
+.flink-list-card .flink-item-icon img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important; /* 圆形头像，更像文章作者 */
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* 文字容器：占据剩余所有空间，并允许换行 */
+.flink-list-card .flink-item-name,
+.flink-list-card .flink-item-desc {
+  flex: 1 !important;
+  line-height: 1.4 !important;
+}
+
+/* 网站名称样式 */
+.flink-list-card .flink-item-name {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--font-color) !important;
+  margin-bottom: 4px !important;
+  white-space: normal !important;  /* 允许自动换行，防止被截断 */
+  word-break: break-word !important;
+}
+
+/* 网站描述样式 */
+.flink-list-card .flink-item-desc {
+  font-size: 0.85rem !important;
+  color: var(--font-color) !important;
+  opacity: 0.7 !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+}
